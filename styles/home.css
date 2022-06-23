@@ -1,0 +1,357 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&family=Open+Sans:wght@300;800&display=swap');
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Open Sans"
+}
+
+::-webkit-scrollbar{
+    width: 10px;
+}
+
+::-webkit-scrollbar-track{
+    background-color: var(--primary-col);
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: black;
+    border-radius: 25px;
+    height: 10px;
+}
+
+/* Utility */
+.flexy {
+    display: flex;
+}
+
+.col-flex{
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.row-flex {
+    flex-direction: row;
+    gap: 1rem;
+}
+/*
+font-family: 'Nunito Sans',
+sans-serif;
+font-family: 'Open Sans',
+sans-serif;
+*/
+
+:root {
+    --primary-col:rgb(214, 3, 40);
+}
+.flex-center {
+    padding-inline: 4rem;
+}
+/* Navbar-Desktop */
+nav{
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    background-color: var(--primary-col);
+    align-items: center;
+    font-family: 'Open Sans';
+}
+
+nav ul {
+    display: flex;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    list-style-type: none;
+    height: 100%;
+}
+
+nav ul li:hover, nav ul li a:hover{
+    color: white;
+    background-color: rgba(0, 0, 0, .2);
+    border-radius: 20px;
+}
+
+nav ul li a {
+    display: block;
+    padding: 1rem ;
+    text-decoration: none;
+    color:black;
+    /* font-family: 'Open Sans'; */
+}
+
+nav img {
+    width: 3vw;
+    min-width: 2rem;
+}
+
+.burger-nav{
+    display: none;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}
+
+/* Hero-Desktop */
+.hero_img-container{
+    width: 100%;
+    height: 40vh;
+    background-image: url("../assets/hero-backdrop.jpg");
+    background-size: cover;
+    box-shadow: inset 0 0 0 1000px rgba(214, 3, 40,0.3);
+    background-repeat: no-repeat;
+}
+.hero_img-container:hover p {
+    height: 100%;
+    color: white;
+    box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, .2);
+}
+.hero_img-container p {
+    font-size: 4rem;
+    font-weight: 500;
+    text-align: center;
+    padding: 4rem;
+}
+
+.hero_text {
+    margin-top: 2rem;
+    width: 100%;
+    font-family: "Nunito Sans" ;
+    font-size: 2rem;
+    text-align: center;
+    font-weight: 400;
+}
+.hero_text:hover {
+    text-decoration: underline;
+    transition: all 5s ease-in;
+}
+
+.hero_cards {
+    margin-top: 2rem;
+    display: flex;
+    gap: 1rem;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.hero_cards-card {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    /* background-color: black; */
+    gap: 1rem;
+    text-align: center;
+    background-color: var(--primary-col);
+    font-family: "Open Sans";
+    border-radius: 20px;
+}
+
+.hero_cards-card p {
+    font-size: 1rem;
+    color: white;
+}
+
+.hero_cards-card img {
+    width: 100%;
+    border-radius: 20px;
+}
+
+.hero_cards-card:hover {
+    animation-name: card-animate;
+    animation-duration: 5s;
+}
+@keyframes card-animate {
+    from {
+        background-color: black;
+    }
+
+    to{
+        background-color: blue;
+    }
+}
+
+/* Contact */
+.contact {
+    width: 100%;
+    margin-top: 2rem;
+    background-color: var(--primary-col);
+    /* height: 100vh; */
+}
+
+.contact_form{
+    background-color: black;
+    background-color: var(--primary-col);
+    margin-top: 5rem;
+    padding: 5vw;
+}
+.contact_form form {
+    background-color: beige;
+    padding: 10px;
+    padding-left: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    border-radius: 20px;
+}
+::placeholder{
+    color: black;
+}
+.contact_form form {
+    width: auto;
+}
+
+.contact_form form input[type=text], input[type=email], input[type=tel]{
+    padding: 5px;
+    outline: 0px none #fff;
+    background-color: var(--primary-col);
+    font-size: 16px;
+    border: none;
+    border-bottom: 2px solid black;
+    border-top-right-radius: 20px;
+}
+
+    .contact_name , .contact_info , .contact_messag , .contact_submit{
+        display: flex;
+        flex-direction: column;
+        gap: .6rem;
+    }
+
+    .contact_submit input[type=submit] {
+        width: fit-content;
+        padding: 10px;
+        border-radius: 20px;
+        border: none;
+        background-color: var(--primary-col);
+        font-family: "Open Sans";
+    }
+
+    .contact_form form h2 {
+        font-size: 3rem;
+    }
+/* grid test */
+.contact_form form {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.contact_form form h2 {
+    grid-column-start: 1;
+    grid-column-end: 4;
+}
+
+.contact_form form .contact_messag {
+    grid-row-start: 3;
+}
+
+.contact_submit {
+    grid-column-start: 1;
+    grid-column-end: 4;
+}
+
+
+/* footer  */
+
+footer {
+    background-color: var(--primary-col);
+    padding-block: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5rem;
+    gap: 1rem;
+}
+
+.footer_content {
+    width: 85vw;
+    /* background-color: blue; */
+    padding: 2rem;
+    margin: 0 auto;
+}
+.breakline {
+    height: 2px;
+    width: 90vw;
+    background-color: black;
+    border-radius: 5px;
+}
+footer .footer_content {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 5rem;
+}
+footer .footer_content .footer_page-links ul, .footer_contact-links ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    list-style-type: none;
+    color: black;
+}
+
+.footer_contact-links ul li {
+    display: flex;
+    gap:5px;
+    align-items: center;
+}
+.footer_page-links ul li a , .footer_contact-links ul li a {
+    text-decoration: none;
+    color:black;
+}
+/* Media Queries */
+@media (max-width:500px){
+    :root {
+            --primary-col: blue;
+        }
+    nav{
+        background-color: blue;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    nav ul li{
+        text-align: center;
+    }
+
+    .burger-nav {
+        display: block;
+    }
+    .collapse {
+        display: none;
+    }
+    .collapse.active {
+        display: flex;
+    }
+
+    /* hero */
+    .hero_img-container p{
+        font-size: clamp(3rem, 10vw, 5rem);
+    }
+
+    /* Contact */
+    .contact_form form {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .contact_form form {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .contact_name , .contact_info , .contact_messag , .contact_submit{
+        display: flex;
+        flex-direction: column;
+    }
+}
